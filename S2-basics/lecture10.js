@@ -27,3 +27,4 @@ console.log(johnOlder);
 console.log(typeof johnOlder);
 console.log(typeof ageJohn);
 console.log(typeof 'Mark is odler');
+console.log(typeof false);
