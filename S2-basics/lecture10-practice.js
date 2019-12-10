@@ -1,10 +1,15 @@
-var me, currentYear, yearBorn, startSchool, meGraduationSchool, meGraduationUni;
+var greeting, me, currentYear, yearBorn, startSchool, meGraduationSchool, meGraduationUni;
 
+greeting = 'Hello, my name is ';
 me = 'Martin';
 currentYear = 2019;
 yearBorn = 1989;
 startSchool = yearBorn + 7;
-meGraduationSchool = yearBorn + startSchool + 12;
+schoolGraduation = startSchool + 12;
 
-var iAm = 'Hello, my name is ' + me + ' and I am ' + currentYear - yearBorn + startSchool;
-console.log(iAm);
+var currentAge = currentYear - yearBorn;
+
+var iAm = greeting + me + ' and I am ' + currentAge + ' years old. ';
+var school = 'I started school in ' + startSchool + ' and I graduated in ' + schoolGraduation + '.';
+console.log(iAm + school);
+console.log(typeof greeting);
