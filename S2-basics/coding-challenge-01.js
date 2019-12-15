@@ -12,15 +12,17 @@ BMI = mass / heigh^2 = mass / (heigh * height)
 
 var markMass, markHeight, johnMass, johnHeight;
 markMass = 98;
-markHeight = 190;
+markHeight = 1.90;
 johnMass = 88;
-johnHeight = 178;
+johnHeight = 1.78;
 
 var markBmi = markMass / (markHeight * markHeight);
 var johnBmi = johnMass / (johnHeight * johnHeight);
 
+console.log(markBmi, johnBmi);
+
 var mark = markBmi >= johnBmi;
 var john = markBmi <= johnBmi;
 
-console.log("John's BMI is higher than Marks?", john);
-console.log("Mark's BMI is higher than Johns?", mark);
+console.log('Is John\'s BMI higher than Marks?', john);
+console.log('Is Mark\'s BMI higher than Johns?', mark);
