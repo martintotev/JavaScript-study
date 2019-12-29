@@ -1,5 +1,6 @@
 // Arrays
 
+// An array is defined by []
 // How to create an array
 var names = ['John', 'Mark', 'Jane'];
 
