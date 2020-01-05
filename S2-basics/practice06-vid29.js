@@ -34,21 +34,33 @@ divide it by the number of elemts in it (that's how you calculate the average).
 */
 
 var john = {
+    // Both names of the person as strings
     firstName: 'John',
     lastName: 'Smith',
+
+    // Function that combines the names and inserts a space between them. Has to ba called outside of the method.
+    // john.fullname();
     fullName: function() {
         this.fullName = this.firstName + ' ' + this.lastName;
         return this.fullName;
     },
+
+    // Bill denomantions in an array.
     bills: [124, 48, 268, 180, 42],
+
+    // Function that callculates the tips.
     calcTip: function() {
+
+        // Empty arrays to be filled with the calucaltions from every bill.
         this.tips = [];
         this.totalPrice = [];
 
+        // For loop introduces the percent variable and a bill variable that will pull from the bills array.
         for (var i = 0; i < this.bills.length; i++) {
             var percent;
             var bill = this.bills[i];
 
+            // if else to calculate the percentage.
             if (bill < 50) {
                 percent = 0.2;
             } else if (bill >= 50 && bill < 200) {
@@ -57,13 +69,63 @@ var john = {
                 percent = 0.1;
             }
 
+            // Calculating the bill with the appropriate percentage.
             this.tips[i] = bill * percent;
             this.totalPrice[i] = bill + bill * percent;
         }
     }
-    
 };
 
+var mark = {
+    firstName: 'Mark',
+    lastName: 'Smith',
+    fullName: function() {
+        this.fullName = this.firstName + ' ' + this.lastName;
+        return this.fullName;
+    },
+    bills: [77, 375, 110, 45],
+    calcTip: function() {
+        this.tips = [];
+        this.totalPrice = [];
+
+        for (var i = 0; i < this.bills.length; i++) {
+            var percent;
+            var bill = this.bills[i];
+
+            if (bill < 100) {
+                percent = 0.2;
+            } else if (bill >= 100 && bill < 300) {
+                percent = 0.1;
+            } else {
+                percent = 0.25;
+            }
+
+            this.tips[i] = bill * percent;
+            this.totalPrice[i] = bill + bill * percent;
+        }
+    }
+};
+
+// Function to calcualte the average tip, by inputing it = (tips)
+function calcAverage(tips) {
+    var sum = 0;
+    for (var i = 0; i < tips.length; i++) {
+        sum = sum + tips[i];
+    }
+    return sum / tips.length;
+}
+
+// Calling both functions.
 john.fullName();
 john.calcTip();
-console.log(john);
+
+mark.fullName();
+mark.calcTip();
+
+// Calling the Calculate Average function.
+john.average = calcAverage(john.tips);
+mark.average = calcAverage(mark.tips);
+
+// Logging it into the console.
+console.log(john, john.average);
+console.log(mark, mark.average);
