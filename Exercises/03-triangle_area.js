@@ -1,4 +1,4 @@
-var a = 8;
+var a = 2;
 var b = 12;
 var c = 13;
 
